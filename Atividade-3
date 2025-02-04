@@ -1,0 +1,32 @@
+using System;
+
+namespace b
+{
+	class Program
+	{
+		public static void Main()
+		{
+			// Recebendo dados do  úsuario
+			Console.WriteLine("Digite sua data de nascimento: ");
+			Console.WriteLine("Digite o dia em que você nasceu: ");
+			int dia = int.Parse(Console.ReadLine());
+			
+			Console.WriteLine("Digite o mês em que você nasceu: ");
+			int mes = int.Parse(Console.ReadLine());
+			
+			Console.WriteLine("Digite o ano em que você nasceu: ");
+			int ano = int.Parse(Console.ReadLine());
+			
+			// Calculando diferença das datas
+			DateTime dataAtual = DateTime.Now;
+			DateTime data2 = new DateTime(ano , mes , dia);
+			TimeSpan diferenca = dataAtual - data2;
+			
+			// Exibindo resultado
+			Console.WriteLine("Diferença entre dias: " + diferenca.TotalDays.ToString("0"));
+			
+			Console.Write("Pressione qualquer tecla para sair . . .");
+			Console.ReadKey(true);
+		}
+	}
+}
