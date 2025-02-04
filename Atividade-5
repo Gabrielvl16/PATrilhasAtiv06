@@ -1,0 +1,85 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int opcao;
+
+        // Loop para o menu continuar até o usuário escolher sair
+        do
+        {
+            // Estrutura do menu
+            Console.Clear();
+            Console.WriteLine("====MENU====");
+            Console.WriteLine("Escolha uma das opções:");
+            Console.WriteLine("1 - Somar");
+            Console.WriteLine("2 - Dividir");
+            Console.WriteLine("3 - Subtrair");
+            Console.WriteLine("4 - Sair");
+            Console.WriteLine("============");
+
+            // Verifica se a entrada do usuário é válida
+            if (int.TryParse(Console.ReadLine(), out opcao))
+            {
+                switch (opcao)
+                {
+                    case 1:
+                        Console.WriteLine("Digite dois números para serem somados:");
+                        int num1 = int.Parse(Console.ReadLine());
+                        int num2 = int.Parse(Console.ReadLine());
+
+                        int resultadoSoma = num1 + num2;
+                        Console.WriteLine("O resultado da sua soma é: " + resultadoSoma);
+                        break;
+
+                    case 2:
+                        Console.WriteLine("Digite dois números para serem divididos: ");
+                        float n1 = float.Parse(Console.ReadLine());
+                        float n2 = float.Parse(Console.ReadLine());
+
+                        if (n2 != 0) // Verifica se o divisor não é zero
+                        {
+                            float resultadoDivisao = n1 / n2;
+                            Console.WriteLine("O resultado da sua divisão é: " + resultadoDivisao);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Não é possível dividir por zero.");
+                        }
+                        break;
+
+                    case 3:
+                        Console.WriteLine("Digite dois números para serem subtraídos:");
+                        int nu1 = int.Parse(Console.ReadLine());
+                        int nu2 = int.Parse(Console.ReadLine());
+
+                        int resultadoSubtracao = nu1 - nu2;
+                        Console.WriteLine("O resultado da sua subtração é: " + resultadoSubtracao);
+                        break;
+
+                    case 4:
+                        Console.WriteLine("Saindo... Até logo!");
+                        break;
+
+                    default:
+                        Console.WriteLine("Opção inválida! Por favor, escolha entre 1, 2, 3 ou 4.");
+                        break;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Entrada inválida! Por favor, digite um número.");
+            }
+
+            // Aguarda o usuário pressionar uma tecla para continuar
+            if (opcao != 4)
+            {
+                Console.WriteLine("Pressione qualquer tecla para continuar...");
+                Console.ReadKey();
+            }
+
+        } while (opcao != 4); // O loop continua até o usuário escolher a opção de sair
+
+    }
+}
