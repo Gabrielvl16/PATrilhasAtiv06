@@ -1,0 +1,60 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Solicita ao usuário a data
+        Console.WriteLine("Digite uma data (dd/mm/yyyy): ");
+        DateTime data;
+        bool dataValida = DateTime.TryParse(Console.ReadLine(), out data);
+
+        if (!dataValida)
+        {
+            Console.WriteLine("Data inválida.");
+            return;
+        }
+
+        // Verifica se a data é um feriado
+        if (EhFeriado(data))
+        {
+            Console.WriteLine("A data " + data.ToString("dd/MM/yyyy") + " é um feriado nacional.");
+        }
+        else
+        {
+            Console.WriteLine("A data " + data.ToString("dd/MM/yyyy") + " não é um feriado nacional.");
+        }
+
+        // Aguarda o usuário pressionar uma tecla para sair
+        Console.Write("Pressione qualquer tecla para sair . . . ");
+        Console.ReadKey();
+    }
+
+    static bool EhFeriado(DateTime data)
+    {
+        // Lista de feriados fixos
+        DateTime[] feriadosFixos = new DateTime[] 
+        {
+            new DateTime(data.Year, 1, 1),   // Ano Novo
+            new DateTime(data.Year, 4, 21),  // Tiradentes
+            new DateTime(data.Year, 5, 1),   // Dia do Trabalho
+            new DateTime(data.Year, 9, 7),   // Independência do Brasil
+            new DateTime(data.Year, 10, 12), // Nossa Senhora Aparecida
+            new DateTime(data.Year, 11, 2),  // Finados
+            new DateTime(data.Year, 11, 15), // Proclamação da República
+            new DateTime(data.Year, 12, 25)  // Natal
+        };
+
+        // Verifica se a data é um feriado fixo
+        foreach (var feriado in feriadosFixos)
+        {
+            if (data.Date == feriado.Date)
+            {
+                return true;
+            }
+        }
+
+        // Se não for um feriado fixo, retorna falso
+        return false;
+    }
+}
