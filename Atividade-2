@@ -1,0 +1,18 @@
+using System;
+
+namespace b
+{
+	class Program
+	{
+		public static void Main()
+		{
+			DateTime data1 = new DateTime(2008, 01, 01);
+			DateTime data2 = new DateTime(2025, 02, 04);
+			TimeSpan diferenca = data2 - data1;
+			
+			Console.WriteLine("Diferença entre dias: " + diferenca.TotalDays); 
+			Console.Write("Pressione qualquer tecla para sair . . .");
+			Console.ReadKey(true);
+		}
+	}
+}
