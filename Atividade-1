@@ -1,0 +1,19 @@
+using System;
+
+namespace b
+{
+	class Program
+	{
+		public static void Main()
+		{
+			// Captura data e horas atuais 
+			DateTime dataAtual = DateTime.Now;
+			
+			// Exibe na tela o resultado
+			Console.WriteLine(dataAtual);
+			
+			Console.Write("Pressione qualquer tecla para sair . . .");
+			Console.ReadKey(true);
+		}
+	}
+}
