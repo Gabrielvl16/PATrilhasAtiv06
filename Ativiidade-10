@@ -1,0 +1,71 @@
+class Program
+{
+    static void Main()
+    {
+        int opcao;
+
+        // Loop para o menu continuar até o usuário escolher sair
+        do
+        {
+            // Estrutura do menu
+            Console.Clear();
+      	    Console.WriteLine("====MENU===");
+			      Console.WriteLine("1- Camisa P");
+	      		Console.WriteLine("2- Camisa M");
+		       	Console.WriteLine("3- Camisa G");
+		      	Console.WriteLine("4- Sair");
+		      	Console.WriteLine("============");
+			
+            // Verifica se a entrada do usuário é válida
+            if (int.TryParse(Console.ReadLine(), out opcao))
+            {
+                switch (opcao)
+                {
+                    case 1:
+                		    Console.WriteLine("====CAMISA-P====");
+                		    Console.Write("O valor é: ");
+                	      Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("R$ 80,00");
+                        Console.ResetColor();
+                	     	Console.WriteLine("================");
+                      break;
+
+                    case 2:
+                        Console.WriteLine("====CAMISA-M====");
+                	    	Console.Write("O valor é: ");
+                	      Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("R$ 100,00");
+                        Console.ResetColor();
+                		    Console.WriteLine("================");
+                      break;
+         
+                    case 3:
+                        Console.WriteLine("====CAMISA-G====");
+                		    Console.Write("O valor é: ");
+                	      Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("R$ 125,00");
+                        Console.ResetColor();
+                	     	Console.WriteLine("================");
+                      break;
+
+                    default:
+                        Console.WriteLine("Opção inválida! Por favor, escolha entre 1, 2, 3 ou 4.");
+                        break;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Entrada inválida! Por favor, digite um número.");
+            }
+
+            // Aguarda o usuário pressionar uma tecla para continuar
+            if (opcao != 4)
+            {
+                Console.WriteLine("Pressione qualquer tecla para continuar...");
+                Console.ReadKey();
+            }
+
+        } while (opcao != 4); // O loop continua até o usuário escolher a opção de sair
+
+    }
+}
