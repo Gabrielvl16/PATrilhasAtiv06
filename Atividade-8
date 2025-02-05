@@ -1,0 +1,44 @@
+using System;
+
+namespace b
+{
+	class Program
+	{
+		public static void Main()
+		{
+			// Recene letra do úsuario
+			Console.WriteLine("Digite uma letra: ");
+			char letra = char.Parse(Console.ReadLine().ToLower());
+			
+			// Conferindo se e uma vogal ou consoate
+			switch(letra){
+			case 'a':
+			Console.WriteLine ("Você escolheu uma vogal!");
+			break;
+			
+			case 'e':
+			Console.WriteLine ("Você escolheu uma vogal!");
+			break;
+			
+			case 'i':
+			Console.WriteLine ("Você escolheu uma vogal!");
+			break;
+			
+			case 'o':
+			Console.WriteLine ("Você escolheu uma vogal!");
+			break;
+			
+			case 'u':
+			Console.WriteLine ("Você escolheu uma vogal!");
+			break;
+			
+			default:
+			Console.WriteLine ("Não é uma vogal!");
+			break;
+			}
+			
+			Console.Write("Press any key to continue . . . ");
+			Console.ReadKey(true);
+		}
+	}
+}
