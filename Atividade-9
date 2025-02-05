@@ -1,0 +1,52 @@
+using System;
+
+namespace b
+{
+	class Program
+	{
+		public static void Main()
+		{
+			// Recene letra do úsuario
+			Console.WriteLine("Digite um número de um a sete: ");
+			int diaSemana = int.Parse(Console.ReadLine());
+			
+			// Definindo a qual dia o número e correspondente
+			switch(diaSemana){
+				case 1:
+					Console.WriteLine("Segunda-Feira!");
+				    break;
+				    
+		    	case 2:
+					Console.WriteLine("Terça-Feira!");
+				    break;
+				    
+				case 3:
+					Console.WriteLine("Quarta-Feira!");
+				    break;
+				    
+		     	case 4:
+					Console.WriteLine("Quinta-Feira!");
+				    break;
+				    
+		     	case 5:
+					Console.WriteLine("Sexta-Feira!");
+				    break;
+				    
+		     	case 6:
+					Console.WriteLine("Sabado!");
+				    break;
+				    
+		    	case 7:
+					Console.WriteLine("Domingo");
+				    break;
+				    
+			    default:
+				    Console.WriteLine("Este dia não corresponde a um dia de semana!");
+				    break;
+			}
+			
+			Console.Write("Press any key to continue . . . ");
+			Console.ReadKey(true);
+		}
+	}
+}
